@@ -1,0 +1,69 @@
+{
+  "name": "drone-ci-mcp",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "pnpm@10.9.0",
+  "description": "💻 MCP server to interact with Drone CI",
+  "license": "MIT",
+  "author": "Sharath Madappa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madappa-sharath/drone-ci-mcp.git"
+  },
+  "bin": {
+    "drone-ci-mcp": "./dist/index.js"
+  },
+  "files": [
+    "./dist/*"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./droneClient": {
+      "types": "./dist/droneClient.ts",
+      "default": "./dist/droneClient.js"
+    },
+    "./transports/stdio": {
+      "types": "./dist/transports/stdio.ts",
+      "default": "./dist/transports/stdio.js"
+    },
+    "./server": {
+      "types": "./dist/server.ts",
+      "default": "./dist/server.js"
+    },
+    "./toolDefinitions": {
+      "types": "./dist/toolDefinitions.ts",
+      "default": "./dist/toolDefinitions.js"
+    },
+    "./types": {
+      "types": "./dist/types.ts",
+      "default": "./dist/types.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsc -w",
+    "start": "tsx src/index.ts",
+    "prepare": "npm run build",
+    "test": "vitest",
+    "test:ci": "vitest run --coverage --reporter=junit --outputFile=tests.junit.xml",
+    "test:watch": "vitest watch"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.15.2",
+    "tsdown": "^0.9.8",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "axios": "^1.8.4",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.24.1"
+  }
+}
