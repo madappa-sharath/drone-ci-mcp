@@ -37,7 +37,7 @@ if (!serverUrl) {
 
 const server = new McpServer({
   name: "Drone CI MCP",
-  version: "0.1.0",
+  version: "0.0.2",
 });
 
 startStdio(server, {

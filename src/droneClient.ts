@@ -35,10 +35,8 @@ export class DroneClient {
     } catch (error) {
       console.error(error);
       if (axios.isAxiosError(error)) {
-        console.error("Bazinga");
         throw new ApiError(error.message, error.response?.status || 500);
       }
-      console.error("No Bazinga");
       throw error;
     }
   }
