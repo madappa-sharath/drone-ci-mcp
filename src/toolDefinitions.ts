@@ -9,7 +9,7 @@ export const TOOL_DEFINITIONS = [
   {
     name: "drone_build_info" as const,
     description: [
-      "Look up information about a drone CI build including the current status, stages and steps",
+      "Look up information about a build on ${DRONE_SERVER_URL}. This includes the current status, stages and steps",
       "",
       "Use this tool when you need to:",
       "- Know the status of the build",

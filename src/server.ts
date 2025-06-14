@@ -41,7 +41,7 @@ export async function configureServer({
     const handler = TOOL_HANDLERS[tool.name];
     server.tool(
       tool.name as string,
-      tool.description,
+      tool.description.replaceAll("${DRONE_SERVER_URL}", context.serverUrl),
       tool.paramsSchema ? tool.paramsSchema : {},
       async (...args) => {
         try {
@@ -72,7 +72,7 @@ export async function configureServer({
             onToolComplete();
           }
         }
-      },
+      }
     );
   }
 }

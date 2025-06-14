@@ -8,6 +8,7 @@ An opinionated mcp server that exposes [drone.io](https://www.drone.io/) ci buil
 ## Usage
 
 ### Launch the transport
+
 ```
 npx -y drone-ci-mcp --access-token=<access-token-from-drone> --server-url=<url>
 ```
@@ -51,7 +52,7 @@ Outputs:
 
 Response from https://docs.drone.io/api/builds/build_info/ as Mardown + YAML
 
-```
+````markdown
 # Build **1** in **<repo slug>**
 
 ```yaml
@@ -116,6 +117,8 @@ stages:
         image: drone/git:latest
         .....
 ```
+````
+
 ### drone_build_info
 
 Readonly tool that looks up a logs for a step.
@@ -131,14 +134,14 @@ Outputs:
 
 Response from https://docs.drone.io/api/builds/build_logs/ as Mardown
 
-```
-# Logs for step 2 in 1 stage of **1** build in **<repo slug>** repository
+````markdown
+# Logs for step 2 in stage **1** of **1** build in **<repo slug>** repository
 
 ```shell
 + echo 'hello-world'
 ,hello-world
-
 ```
+````
 
 ## Demo
 

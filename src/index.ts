@@ -17,27 +17,27 @@ for (const arg of process.argv.slice(2)) {
 
 if (!accessToken) {
   console.error(
-    "Error: No access token was provided. Pass one with `--access-token` or via `DRONE_ACCESS_TOKEN`.",
+    "Error: No access token was provided. Pass one with `--access-token` or via `DRONE_ACCESS_TOKEN`."
   );
   console.error(
-    `Usage: ${command} --access-token=<token> [--server-url=<drone-server-url>]`,
+    `Usage: ${command} --access-token=<token> [--server-url=<drone-server-url>]`
   );
   process.exit(1);
 }
 
 if (!serverUrl) {
   console.error(
-    "Error: No server url was provided. Pass one with `--server-url` or via `DRONE_SERVER_URL`.",
+    "Error: No server url was provided. Pass one with `--server-url` or via `DRONE_SERVER_URL`."
   );
   console.error(
-    `Usage: ${command} --access-token=<token> [--server-url=<drone-server-url>]`,
+    `Usage: ${command} --access-token=<token> [--server-url=<drone-server-url>]`
   );
   process.exit(1);
 }
 
 const server = new McpServer({
   name: "Drone CI MCP",
-  version: "0.0.2",
+  version: "0.0.3",
 });
 
 startStdio(server, {

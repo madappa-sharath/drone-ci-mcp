@@ -1,6 +1,6 @@
 {
   "name": "drone-ci-mcp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "packageManager": "pnpm@10.9.0",
   "description": "💻 MCP server to interact with Drone CI",
